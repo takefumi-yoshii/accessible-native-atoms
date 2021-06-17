@@ -1,0 +1,29 @@
+{
+  "name": "accessible-native-atoms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takefumi-yoshii/accessible-native-atoms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takefumi-yoshii/accessible-native-atoms/issues"
+  },
+  "homepage": "https://github.com/takefumi-yoshii/accessible-native-atoms#readme",
+  "dependencies": {
+    "next": "^10.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.35.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.11",
+    "typescript": "^4.3.2"
+  }
+}
