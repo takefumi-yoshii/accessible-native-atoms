@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+button {
+  border: none;
+}
+
+:root {
+  --primary-text-color: #fff;
+  --primary-bg-color: #1976d2;
+  --primary-active-color: #3b91e8;
+  --secondary-text-color: #fff;
+  --secondary-bg-color: #dc004e;
+  --secondary-active-color: #e9266b;
+  --disabled-text-color: #6c6c6c;
+  --disabled-bg-color: #b6b6b6;
+}
