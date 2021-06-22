@@ -22,7 +22,7 @@ const ButtonComponent = React.forwardRef<
 >(({ className, color = "primary", ...props }, ref) => (
   <button
     ref={ref}
-    tabIndex={-1}
+    tabIndex={0}
     className={mergeClassName(styles.button, className)}
     data-color={color}
     {...props}
@@ -35,7 +35,7 @@ const InputComponent = React.forwardRef<
 >(({ className, color = "primary", ...props }, ref) => (
   <input
     ref={ref}
-    tabIndex={-1}
+    tabIndex={0}
     className={mergeClassName(styles.button, className)}
     data-color={color}
     type="button"
@@ -49,7 +49,7 @@ const AnchorComponent = React.forwardRef<
 >(({ className, color = "primary", ...props }, ref) => (
   <a
     ref={ref}
-    tabIndex={-1}
+    tabIndex={0}
     className={mergeClassName(styles.button, className)}
     data-color={color}
     {...props}
