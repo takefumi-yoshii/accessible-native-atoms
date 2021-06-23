@@ -12,7 +12,7 @@ type SpecificProp = { color?: Color };
 // ______________________________________________________
 //
 type Props<T extends Tag> = SpecificProp &
-  React.ComponentPropsWithoutRef<T> & { tag: T };
+  React.ComponentPropsWithRef<T> & { tag: T };
 // ______________________________________________________
 //
 export const Button: <T extends Tag>(props: Props<T>) => JSX.Element =
