@@ -1,7 +1,7 @@
 .module {
   display: inline-block;
 
-  > input[data-color] {
+  > input {
     width: 0;
     height: 0;
     position: absolute;
@@ -13,6 +13,8 @@
       margin-right: 0.5em;
       position: relative;
       border: 2px solid var(--border-color);
+      border-radius: 24px;
+      background-color: #fff;
       transition-duration: 0.2s;
       transition-property: background-color;
       cursor: pointer;
@@ -20,52 +22,64 @@
       &::before {
         content: "";
         position: absolute;
-        width: 4px;
-        height: 8px;
+        width: 12px;
+        height: 12px;
         top: 4px;
-        left: 7px;
-        border: 3px solid #fff;
-        border-top: none;
-        border-left: none;
+        left: 4px;
+        border-radius: 14px;
+        background-color: #ccc;
+        border-color: #ccc;
         transition-duration: 0.2s;
-        transform: rotate(0deg) scale(0);
-      }
-    }
-
-    &:checked + span {
-      &::before {
-        transform: rotate(45deg) scale(1);
+        transition-property: transform;
+        transform: scale(0);
       }
     }
   }
 
   > input[data-color="primary"] {
+    &:checked + span {
+      background-color: #fff;
+      border-color: var(--primary-bg-color);
+      &::before {
+        background-color: var(--primary-bg-color);
+        transform: scale(1);
+      }
+    }
     &:focus + span {
       border-color: var(--primary-bg-color);
       box-shadow: 0px 0px 3px var(--primary-bg-color);
-    }
-    &:checked + span {
-      background-color: var(--primary-bg-color);
+      &::before {
+        background-color: var(--primary-bg-color);
+        transform: scale(1);
+      }
     }
   }
 
   > input[data-color="secondary"] {
+    &:checked + span {
+      background-color: #fff;
+      border-color: var(--secondary-bg-color);
+      &::before {
+        background-color: var(--secondary-bg-color);
+        transform: scale(1);
+      }
+    }
     &:focus + span {
       border-color: var(--secondary-bg-color);
       box-shadow: 0px 0px 3px var(--secondary-bg-color);
-    }
-    &:checked + span {
-      background-color: var(--secondary-bg-color);
+      &::before {
+        background-color: var(--secondary-bg-color);
+        transform: scale(1);
+      }
     }
   }
 
   > input[data-color] {
     &:disabled + span {
       pointer-events: none;
-      background-color: var(--disabled-text-color);
       border-color: var(--disabled-border-color);
       &::before {
-        border-color: var(--disabled-bg-color);
+        background-color: var(--disabled-text-color);
       }
     }
   }

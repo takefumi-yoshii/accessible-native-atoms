@@ -6,26 +6,13 @@
     height: 0;
     position: absolute;
 
-    &:checked + span {
-      background-color: #41e17c;
-      &::before {
-        left: 25px;
-      }
-    }
-
-    &:disabled + span {
-      pointer-events: none;
-      background-color: #eee;
-      border-color: #ededed;
-    }
-
     & + span {
       display: inline-block;
       width: 48px;
       height: 24px;
       margin-right: 0.5em;
       position: relative;
-      border: 2px solid #c1c1c1;
+      border: 2px solid var(--border-color);
       border-radius: 24px;
       background-color: #d8d8d8;
       transition-duration: 0.2s;
@@ -43,6 +30,12 @@
         background-color: #fff;
         transition-duration: 0.2s;
         transition-property: left;
+      }
+    }
+
+    &:checked + span {
+      &::before {
+        left: 25px;
       }
     }
   }
@@ -70,7 +63,11 @@
   > input[data-color] {
     &:disabled + span {
       pointer-events: none;
-      background-color: var(--disabled-bg-color);
+      background-color: var(--disabled-text-color);
+      border-color: var(--disabled-border-color);
+      &::before {
+        background-color: var(--disabled-bg-color);
+      }
     }
   }
 }

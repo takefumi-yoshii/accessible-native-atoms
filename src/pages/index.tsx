@@ -4,6 +4,7 @@ import { Button } from "../components/Button";
 import { Heading } from "../components/Heading";
 import { Checkbox } from "../components/Checkbox";
 import { Switch } from "../components/Switch";
+import { Radio } from "../components/Radio";
 import Link from "next/link";
 
 const Page = () => {
@@ -114,6 +115,16 @@ const Page = () => {
       <Switch color="primary" disabled checked />
       <Switch color="secondary" />
       <Switch color="secondary" disabled />
+      <hr />
+      {/*  */}
+      <Heading tag="h2">Radio</Heading>
+      <Radio name="radio" color="primary" />
+      <Radio name="radio" color="primary" disabled />
+      <Radio name="radio" color="secondary" />
+      <Radio name="radio" color="secondary" disabled />
+      <hr />
+      {/*  */}
+      <Heading tag="h2">Textbox</Heading>
     </>
   );
 };
