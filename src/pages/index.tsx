@@ -3,17 +3,18 @@ import { TabList } from "../components/TabList";
 import { Button } from "../components/Button";
 import { Heading } from "../components/Heading";
 import { Checkbox } from "../components/Checkbox";
+import { Switch } from "../components/Switch";
 import Link from "next/link";
 
 const Page = () => {
   const ref = React.createRef<HTMLHeadingElement>();
   return (
     <>
-      <Heading tag="h1" ref={ref}>
-        Button
+      <Heading tag="h1" ref={ref} aria-level={6}>
+        Heading h1
       </Heading>
       <Heading tag="p" aria-level={6}>
-        Button
+        Heading p
       </Heading>
       <hr />
       <Heading tag="h1">Button</Heading>
@@ -61,7 +62,7 @@ const Page = () => {
       {/*  */}
       <Heading tag="h2">TabList</Heading>
       <TabList
-        theme="primary"
+        color="primary"
         tabsProps={[
           {
             children: "First Tab",
@@ -81,7 +82,7 @@ const Page = () => {
       />
       <br />
       <TabList
-        theme="secondary"
+        color="secondary"
         tabsProps={[
           {
             children: "First Tab",
@@ -102,7 +103,17 @@ const Page = () => {
       <hr />
       {/*  */}
       <Heading tag="h2">Checkbox</Heading>
-      <Checkbox theme="primary" className="hoge" />
+      <Checkbox color="primary" />
+      <Checkbox color="primary" disabled checked />
+      <Checkbox color="secondary" />
+      <Checkbox color="secondary" disabled />
+      <hr />
+      {/*  */}
+      <Heading tag="h2">Switch</Heading>
+      <Switch color="primary" />
+      <Switch color="primary" disabled checked />
+      <Switch color="secondary" />
+      <Switch color="secondary" disabled />
     </>
   );
 };

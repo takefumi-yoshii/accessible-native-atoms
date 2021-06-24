@@ -1,20 +1,31 @@
 import React from "react";
 import styles from "./style.module.scss";
 import { mergeClassName } from "../utils";
-
-type Props = React.ComponentProps<"div"> & {
-  theme: "primary" | "secondary";
+// ______________________________________________________
+//
+type Color = "primary" | "secondary";
+type SpecificProps = {
+  color?: Color;
   tabsProps: (React.ComponentProps<"button"> & {
     controls: string;
     selected?: boolean;
   })[];
 };
-
-export const TabList = ({ theme, className, tabsProps, ...props }: Props) => (
+// ______________________________________________________
+//
+type Props = React.ComponentProps<"div"> & SpecificProps;
+// ______________________________________________________
+//
+export const TabList = ({
+  className,
+  color = "primary",
+  tabsProps,
+  ...props
+}: Props) => (
   <div
     role="tablist"
-    data-theme={theme}
-    className={mergeClassName(styles.tablist, className)}
+    data-color={color}
+    className={mergeClassName(styles.module, className)}
     {...props}
   >
     {tabsProps.map(({ selected, controls, ...tabProps }, index) => (

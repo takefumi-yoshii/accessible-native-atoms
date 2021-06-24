@@ -10,8 +10,8 @@ type SpecificProps = { color?: Color };
 type Props = React.ComponentProps<"input"> & SpecificProps;
 // ______________________________________________________
 //
-export const Checkbox = React.forwardRef<HTMLInputElement, Props>(
-  ({ className, color = "primary", ...props }, ref) => (
+export const Switch = React.forwardRef<HTMLInputElement, Props>(
+  ({ className, color = "primary", checked, ...props }, ref) => (
     <label className={mergeClassName(styles.module, className)}>
       <input
         ref={ref}
@@ -19,6 +19,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, Props>(
         data-color={color}
         {...props}
         type="checkbox"
+        role="switch"
       />
       <span />
     </label>

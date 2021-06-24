@@ -30,7 +30,6 @@ export const Button: <T extends Tag>(props: Props<T>) => JSX.Element =
         tabIndex: 0,
         className: mergeClassName(styles.module, className),
         "data-color": color,
-        ...(tag === "button" && { type: "button" }),
         ...props,
         ...(tag === "a" && { role: "button" }),
       })

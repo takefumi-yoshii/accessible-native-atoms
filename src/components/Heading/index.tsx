@@ -10,7 +10,7 @@ type Element = HTMLHeadingElement | HTMLParagraphElement;
 // ______________________________________________________
 //
 type AriaLevel = 1 | 2 | 3 | 4 | 5 | 6;
-type HeadingProps = { tag: HeadingTag; role?: never; "aria-level"?: never };
+type HeadingProps = { tag: HeadingTag; role?: never; "aria-level"?: AriaLevel };
 type HeadingLikeProps = { tag: HeadingLikeTag; "aria-level": AriaLevel };
 // ______________________________________________________
 //

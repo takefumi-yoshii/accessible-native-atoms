@@ -1,4 +1,4 @@
-.tablist {
+.module {
   display: inline-block;
 
   [role="tab"] {
@@ -20,7 +20,7 @@
     }
   }
 
-  &[data-theme="primary"] [role="tab"] {
+  &[data-color="primary"] [role="tab"] {
     color: var(--primary-text-color);
     background-color: var(--primary-bg-color);
 
@@ -36,7 +36,7 @@
     }
   }
 
-  &[data-theme="secondary"] [role="tab"] {
+  &[data-color="secondary"] [role="tab"] {
     color: var(--secondary-text-color);
     background-color: var(--secondary-bg-color);
 
