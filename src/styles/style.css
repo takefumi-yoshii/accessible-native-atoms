@@ -1,14 +1,23 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
+html {
   font-size: 62.5%;
 }
 
+body,
+button,
+a {
+  font-size: 1.6rem;
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo,
+    メイリオ, Osaka, "MS PGothic", arial, helvetica, sans-serif;
+}
+
 button {
-  border: none;
+  border-width: 0;
 }
 
 :root {

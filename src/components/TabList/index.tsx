@@ -24,7 +24,7 @@ export const TabList = ({ theme, className, tabsProps, ...props }: Props) => (
         key={`tab-${index}`}
         aria-selected={selected}
         aria-controls={controls}
-        tabIndex={1}
+        tabIndex={0}
         {...tabProps}
       />
     ))}

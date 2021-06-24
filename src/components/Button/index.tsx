@@ -3,16 +3,23 @@ import styles from "./style.module.scss";
 import { mergeClassName } from "../utils";
 // ______________________________________________________
 //
-type Tag = "a" | "button" | "input";
+type ButtonTag = "button" | "input";
+type ButtonLikeTag = "a";
+type Tag = ButtonTag | ButtonLikeTag;
 type Element = HTMLAnchorElement | HTMLButtonElement | HTMLInputElement;
 // ______________________________________________________
 //
-type Color = "primary" | "secondary";
-type SpecificProp = { color?: Color };
+type ButtonProps = { tag: ButtonTag; role?: never };
+type ButtonLikeProps = { tag: ButtonLikeTag };
 // ______________________________________________________
 //
-type Props<T extends Tag> = SpecificProp &
-  React.ComponentPropsWithRef<T> & { tag: T };
+type Color = "primary" | "secondary";
+type SpecificProps = { color?: Color };
+// ______________________________________________________
+//
+type Props<T extends Tag> = T extends ButtonTag
+  ? ButtonProps & SpecificProps & React.ComponentPropsWithRef<T>
+  : ButtonLikeProps & SpecificProps & React.ComponentPropsWithRef<T>;
 // ______________________________________________________
 //
 export const Button: <T extends Tag>(props: Props<T>) => JSX.Element =
@@ -21,7 +28,7 @@ export const Button: <T extends Tag>(props: Props<T>) => JSX.Element =
       React.createElement(tag, {
         ref,
         tabIndex: 0,
-        className: mergeClassName(styles.button, className),
+        className: mergeClassName(styles.module, className),
         "data-color": color,
         ...(tag === "button" && { type: "button" }),
         ...props,
