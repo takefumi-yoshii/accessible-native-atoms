@@ -21,24 +21,23 @@ const Page = () => {
       <Heading tag="h1">Button</Heading>
       <Button tag="button">button</Button>
       <Link href="s">
-        <Button tag="a" href="">
+        <Button tag="a" role="button">
           anchor
         </Button>
       </Link>
-      <Button
-        tag="input"
-        type="button"
-        value="input[type='button']"
-        disabled
-        aria-disabled
-      />
+      <Link href="s">
+        <Button tag="button" disabled>
+          anchor
+        </Button>
+      </Link>
+      <Button tag="input" type="button" value="input[type='button']" disabled />
       <Button tag="input" type="submit" value="input[type='submit']" />
       <Button tag="input" type="reset" value="input[type='reset']" />
       <br />
       <Button tag="button" color="primary">
         button
       </Button>
-      <Button tag="a" color="secondary">
+      <Button tag="a" role="button" color="secondary">
         anchor
       </Button>
       <Button

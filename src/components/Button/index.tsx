@@ -10,7 +10,7 @@ type Element = HTMLAnchorElement | HTMLButtonElement | HTMLInputElement;
 // ______________________________________________________
 //
 type ButtonProps = { tag: ButtonTag; role?: never };
-type ButtonLikeProps = { tag: ButtonLikeTag };
+type ButtonLikeProps = { tag: ButtonLikeTag; role: "button" };
 // ______________________________________________________
 //
 type Color = "primary" | "secondary";
@@ -31,6 +31,5 @@ export const Button: <T extends Tag>(props: Props<T>) => JSX.Element =
         className: mergeClassName(styles.module, className),
         "data-color": color,
         ...props,
-        ...(tag === "a" && { role: "button" }),
       })
   );

@@ -63,11 +63,7 @@
   > input[data-color] {
     &:disabled + span {
       pointer-events: none;
-      background-color: var(--disabled-text-color);
-      border-color: var(--disabled-border-color);
-      &::before {
-        background-color: var(--disabled-bg-color);
-      }
+      filter: grayscale(100%) brightness(110%);
     }
   }
 }
